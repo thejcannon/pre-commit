@@ -191,7 +191,7 @@ def _run_single_hook(
         elif hook.use_filesnames_file:
             filenames_file = tempfile.NamedTemporaryFile('w+')
             filenames_file.write('\n'.join(filenames))
-            filenames = (f"@{filenames_file}",)
+            filenames = (f"@{filenames_file.name}",)
 
         time_before = time.monotonic()
         language = languages[hook.language]
